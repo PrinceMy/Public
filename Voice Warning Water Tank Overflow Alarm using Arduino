@@ -1,0 +1,23 @@
+int readPin=12;
+int speakerPin=9;
+
+
+void setup() {
+  // put your setup code here, to run once:
+ 
+  pinMode(readPin, INPUT);
+  pinMode(speakerPin, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.println(digitalRead(readPin));
+  int readValue=digitalRead(readPin);
+  if (readValue>0) {
+    digitalWrite(speakerPin, HIGH);
+  }
+  else {
+     digitalWrite(speakerPin, LOW);
+  }
+
+}
